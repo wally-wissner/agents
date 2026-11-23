@@ -30,14 +30,6 @@ Never let a comment, docstring, or any other checked-in file point at a path tha
 
 **How to apply:** Before committing a comment or doc that names a file path, check whether that path is gitignored. If it is, drop the specific path and describe the behavior or reason in prose instead, or point at a tracked location that actually ships with the repo.
 
-# Keep secrets and private details out
-
-Never commit credentials (API keys, tokens, passwords, `.env` files) or other secrets. Never include the user's name, email, or project details in requests to external services unless the user explicitly asks.
-
-**Why:** A committed secret stays in history even after it's removed from the working tree. Content sent to an external service may be cached or indexed even if it's later deleted.
-
-**How to apply:** Before staging, check the diff for secrets and for files that likely hold them, and warn the user if they ask to commit one. When a service asks for contact details, such as an email in a User-Agent, use a generic client name or ask.
-
 # Branch off main by default
 
 When creating a new branch, always base it on `main` (fetch first so it starts from the latest `origin/main`), even if the current checkout is on another feature branch. Only branch off something else when told to.

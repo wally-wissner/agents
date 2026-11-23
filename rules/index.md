@@ -4,3 +4,4 @@
 @./code-style.md
 @./documentation.md
 @./git.md
+@./security.md
