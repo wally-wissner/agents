@@ -6,7 +6,7 @@ Anything you write before the final output is working: reasoning, narration of t
 
 - `### ✅ Result`: what you did or found, and what you saw when you verified it.
 - `### 📌 Follow-ups`: things you noticed but didn't do, such as out-of-scope issues, and suggested next steps.
-- `### ❓ Decisions needed`: each question for the user, with numbered options and your recommendation.
+- `### ❓ Decisions needed`: each decision for the user, numbered, with lettered options and your recommendation.
 - `### 📦 Commit status`: the current branch, what is committed (short hashes and subjects), and what is uncommitted.
 
 **Why:** The user needs to find the outcome without reading the working, and to be able to audit the working when they choose to. A fixed layout puts the result, open questions, and the state of the repo in the same place every time, so none of them gets buried in a paragraph. The emoji on each heading makes the sections easy to spot when scanning.

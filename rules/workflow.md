@@ -40,6 +40,10 @@ When a test, check, hook, or build fails, find out why and fix the cause. Don't 
 
 **How to apply:** Reproduce the failure, identify the cause, and fix it. If you can't, report the work as blocked and say what you found instead of working around it.
 
-## Number choices
+## Label decisions and options
 
-When asking the user to make a choice among a set of options, number the options so that the user can refer to them easily.
+When asking the user to make decisions, number each decision and letter the options within it: decision 1 with options A and B, decision 2 with options A, B and C, and so on.
+
+**Why:** The user can answer with a short reference like "1B, 2A" instead of restating the options.
+
+**How to apply:** Label every decision and its options, even when there is only one decision. Restart the lettering at A for each decision.
