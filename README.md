@@ -16,13 +16,13 @@ My agentic workflow: markdown files that agents read at the start of a session â
 
 ## Using the rules
 
-Claude Code loads `CLAUDE.md` files automatically and follows `@path` imports inside them. To apply these rules in every project, import the index from the user-level `~/.claude/CLAUDE.md`:
+Agent tools load an instruction file when a session starts, and many follow `@path` imports inside it. `rules/index.md` is a list of such imports, so importing it loads every rule. To apply these rules in every project, import the index from your tool's user-level instruction file:
 
 ```markdown
 @<path-to-this-repo>/rules/index.md
 ```
 
-Replace `<path-to-this-repo>` with wherever you cloned the repo, as an absolute path or a `~/`-relative one. To apply the rules to a single project instead, put the same line in that project's `CLAUDE.md`. To use only some topics, import those topic files directly instead of the index.
+Replace `<path-to-this-repo>` with wherever you cloned the repo, as an absolute path or a `~/`-relative one. To apply the rules to a single project instead, put the same line in that project's instruction file, such as `AGENTS.md`. To use only some topics, import those topic files directly instead of the index. A tool that doesn't follow `@` imports needs each file in `rules/` pointed at directly.
 
 Imports are read when a session starts, so edits to a rule take effect in the next session. To check what a session loaded, start one and ask which rules it has.
 
@@ -42,6 +42,6 @@ What to do, in a sentence or two.
 
 Describe the current behavior only. Put the history of a change in the commit message.
 
-To add a new topic, create a file in `rules/`, add it to the list above, and add an import line for it to `rules/index.md`. The imports in `CLAUDE.md` files don't change.
+To add a new topic, create a file in `rules/`, add it to the list above, and add an import line for it to `rules/index.md`. The import of the index in your instruction files doesn't change.
 
-Format markdown after editing it, using the command in `CLAUDE.md`.
+Format markdown after editing it, using the command in `AGENTS.md`.
