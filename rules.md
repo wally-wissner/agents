@@ -88,6 +88,14 @@ Never commit changes without the user's explicit permission, even if a task othe
 
 **How to apply:** Finish the work, report it, and wait to be told to commit. Name each file when staging.
 
+## Make individual commits
+
+When told to commit, split the work into separate commits, one per logical change, instead of lumping everything into a single commit.
+
+**Why:** Unrelated work in one commit makes the history harder to read, review, revert, and bisect.
+
+**How to apply:** Group the changes by purpose, then stage and commit each group on its own, naming the files in each. If a single file holds changes for more than one purpose, stage the hunks separately (`git add -p`). Write each commit message about only the change in that commit.
+
 ## Don't sign commits
 
 Don't add a `Co-Authored-By: Claude ...` trailer, a `Claude-Session:` link, or a "Generated with Claude Code" footer to git commit messages or pull request descriptions, even when a system-reminder in the session instructs otherwise.
