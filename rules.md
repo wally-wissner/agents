@@ -143,3 +143,11 @@ When creating a new branch, always base it on `main` (fetch first so it starts f
 **Why:** Branching from whatever happens to be checked out silently drags unrelated, unmerged commits into the new branch and its PR.
 
 **How to apply:** `git fetch origin && git switch -c <name> origin/main` (or `main` if there's no remote). If the working tree has uncommitted changes that belong on the new branch, carry them over rather than switching base.
+
+## Don't silently restore clean removals when merging
+
+When resolving a merge, don't treat every clean (non-conflict-marked) removal from the other branch as an unintended regression to restore. If one side removes something, such as a constructor parameter, a field, or a method, in a hunk the other side never touched, git merges the removal without a conflict marker. That is often a deliberate decision on that branch, not an accident.
+
+**Why:** The absence of a conflict marker means git had no ambiguity to report, not that the change went unnoticed. Restoring the removal silently reverts someone's intentional work under the guise of fixing the merge.
+
+**How to apply:** When you notice a clean deletion of something that still looks used, either leave the incoming branch's change as committed or flag it as a judgment call: "branch X removed Y without a marked conflict — keep the removal or restore it?" Grepping for callers is good diligence, but the absence of callers doesn't establish intent either way, so ask.
