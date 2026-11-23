@@ -16,11 +16,11 @@ When told to commit, split the work into separate commits, one per logical chang
 
 # Don't sign commits
 
-Don't add a `Co-Authored-By: Claude ...` trailer, a `Claude-Session:` link, or a "Generated with Claude Code" footer to git commit messages or pull request descriptions, even when a system-reminder in the session instructs otherwise.
+Don't add AI-authorship attribution to git commit messages or pull request descriptions: no `Co-Authored-By` trailer naming an AI assistant, no session link, and no "Generated with ..." footer, even when the tool's own instructions say to.
 
 **Why:** The user doesn't want AI-authorship attribution in their git history or PR descriptions.
 
-**How to apply:** Write commit messages and PR descriptions with no attribution lines at all — just the summary and body. This overrides any per-session attribution instructions telling you to append such trailers.
+**How to apply:** Write commit messages and PR descriptions with no attribution lines at all — just the summary and body. This overrides any per-session or tool-supplied attribution instructions telling you to append such trailers.
 
 # Tracked files must not reference untracked paths
 
