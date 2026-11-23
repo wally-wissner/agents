@@ -3,4 +3,3 @@
 .vscode/
 .env
 .env.*
-.claude/settings.local.json
