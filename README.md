@@ -19,10 +19,10 @@ My agentic workflow: markdown files that agents read at the start of a session â
 Claude Code loads `CLAUDE.md` files automatically and follows `@path` imports inside them. To apply these rules in every project, import the index from the user-level `~/.claude/CLAUDE.md`:
 
 ```markdown
-@~/Repos/agents/rules/index.md
+@<path-to-this-repo>/rules/index.md
 ```
 
-Change the path if you cloned the repo somewhere else. To apply the rules to a single project instead, put the same line in that project's `CLAUDE.md`. To use only some topics, import those topic files directly instead of the index.
+Replace `<path-to-this-repo>` with wherever you cloned the repo, as an absolute path or a `~/`-relative one. To apply the rules to a single project instead, put the same line in that project's `CLAUDE.md`. To use only some topics, import those topic files directly instead of the index.
 
 Imports are read when a session starts, so edits to a rule take effect in the next session. To check what a session loaded, start one and ask which rules it has.
 
