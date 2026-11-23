@@ -26,6 +26,14 @@ Be willing to push back on an instruction if you don't understand its meaning or
 
 **How to apply:** Raise the concern before you implement, along with the alternative you'd propose, and let the user decide. If they confirm the original instruction, follow it.
 
+## Plan before large changes
+
+When a task touches many files or involves design decisions, outline the approach and get the user's approval before you implement it.
+
+**Why:** A disagreement about approach is cheapest to resolve before any code exists. A large change built on the wrong approach is expensive to redo and to review.
+
+**How to apply:** Summarize the files you expect to change, the approach, and any open decisions, then wait for a go-ahead. Small, clear tasks don't need a plan.
+
 ## Verify before calling it done
 
 Before saying a change works or a bug is fixed, run the real thing and look at the result. Passing unit tests, or a check in a throwaway script, don't count on their own.
