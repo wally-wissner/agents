@@ -12,7 +12,7 @@ My agentic workflow: markdown files that agents read at the start of a session â
 - `workflow.md`: how to approach, verify, and report work.
 - `code-style.md`: code quality and when to suggest existing packages.
 - `documentation.md`: comments and docs.
-- `git.md`: commits, branches, and merges.
+- `version-control.md`: commits, branches, and merges.
 - `security.md`: secrets, untrusted input, access control, cryptography, and untrusted code and content.
 
 ## Using the rules

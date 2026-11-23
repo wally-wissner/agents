@@ -12,7 +12,7 @@ Sparse is not the same as undocumented. Every module, class, and function still 
 
 Never narrate the previous solution in comments, docstrings, or documentation. No "this replaces an earlier design that…", "the port used to be fixed at 8731", "this was not always true". Describe only what the code does now and why.
 
-**Why:** Git history already records what changed and why — the commit message is the right place for it. In the source it is dead weight that ages badly: it grows with every revision, and a reader who never saw the old design has to parse a comparison against something that no longer exists just to learn the current behavior.
+**Why:** Version-control history already records what changed and why — the commit message is the right place for it. In the source it is dead weight that ages badly: it grows with every revision, and a reader who never saw the old design has to parse a comparison against something that no longer exists just to learn the current behavior.
 
 **How to apply:** Write each comment as if the current design were the only one there has ever been. Rationale that justifies the present code is good and should stay; the line to avoid is contrasting it with a prior implementation. Put the before/after story in the commit message instead. This applies to prose docs and skill files as well as code.
 
