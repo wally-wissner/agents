@@ -10,7 +10,7 @@ My agentic workflow: markdown files that agents read at the start of a session â
 - `meta.md`: how the rules themselves are handled.
 - `responses.md`: how replies are structured.
 - `workflow.md`: how to approach, verify, and report work.
-- `code-style.md`: code quality.
+- `code-style.md`: code quality and when to suggest existing packages.
 - `documentation.md`: comments and docs.
 - `git.md`: commits, branches, and merges.
 
