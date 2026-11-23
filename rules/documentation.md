@@ -2,9 +2,11 @@
 
 Comment sparingly. Don't write comments that merely restate what the code says. High-level architectural documentation should live in consolidated documentation files. Restrict comments about code behavior to code that is complex or otherwise non-intuitive.
 
-**Why:** Comments that explain simple code waste the reader's time and risk becoming stale or incorrect.
+Sparse is not the same as undocumented. Every module, class, and function still gets a short doc comment saying what it is for and how it works: its purpose, its contract, and any mechanism a reader couldn't guess from the signature. Write each one modularly and DRY. Describe only the unit itself, and refer to other units by name instead of restating what they do, so a change to one unit only ever forces an edit to its own doc.
 
-**How to apply:** When creating new features or changing existing ones, update the dedicated documentation files. Small implementation changes don't need code comments.
+**Why:** Comments that explain simple code waste the reader's time and risk becoming stale or incorrect. Having no statement of purpose is just as costly, because the reader has to reverse-engineer intent from the implementation. Docs that repeat what is written elsewhere drift out of sync as soon as one copy is updated and the other isn't.
+
+**How to apply:** When creating new features or changing existing ones, update the dedicated documentation files. Small implementation changes don't need code comments. Give each new module, class, and function a doc comment covering what it is for and how it works, scoped to that unit alone. A unit whose name and signature already make its purpose obvious can stay short. Don't copy details from a caller, a callee, or the architecture docs into it; name the other unit instead.
 
 # Comments describe the current design only
 
