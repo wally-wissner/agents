@@ -28,10 +28,10 @@ Imports are read when a session starts, so edits to a rule take effect in the ne
 
 ## Writing rules
 
-Each topic file starts with a `#` heading naming its topic. Each rule is a `##` section in this shape:
+Each topic file holds one or more rules, and each rule is a `#` section in this shape:
 
 ```markdown
-## Rule title
+# Rule title
 
 What to do, in a sentence or two.
 

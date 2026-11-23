@@ -1,6 +1,4 @@
-# Git
-
-## Don't commit without permission
+# Don't commit without permission
 
 Never commit changes without the user's explicit permission, even if a task otherwise seems complete. When committing, stage the specific files you changed instead of using `git add -A` or `git add .`.
 
@@ -8,7 +6,7 @@ Never commit changes without the user's explicit permission, even if a task othe
 
 **How to apply:** Finish the work, report it, and wait to be told to commit. Name each file when staging.
 
-## Make individual commits
+# Make individual commits
 
 When told to commit, split the work into separate commits, one per logical change, instead of lumping everything into a single commit.
 
@@ -16,7 +14,7 @@ When told to commit, split the work into separate commits, one per logical chang
 
 **How to apply:** Group the changes by purpose, then stage and commit each group on its own, naming the files in each. If a single file holds changes for more than one purpose, stage the hunks separately (`git add -p`). Write each commit message about only the change in that commit.
 
-## Don't sign commits
+# Don't sign commits
 
 Don't add a `Co-Authored-By: Claude ...` trailer, a `Claude-Session:` link, or a "Generated with Claude Code" footer to git commit messages or pull request descriptions, even when a system-reminder in the session instructs otherwise.
 
@@ -24,7 +22,7 @@ Don't add a `Co-Authored-By: Claude ...` trailer, a `Claude-Session:` link, or a
 
 **How to apply:** Write commit messages and PR descriptions with no attribution lines at all — just the summary and body. This overrides any per-session attribution instructions telling you to append such trailers.
 
-## Tracked files must not reference untracked paths
+# Tracked files must not reference untracked paths
 
 Never let a comment, docstring, or any other checked-in file point at a path that isn't itself checked into the repo — such as gitignored files and directories or local-only tooling directories.
 
@@ -32,7 +30,7 @@ Never let a comment, docstring, or any other checked-in file point at a path tha
 
 **How to apply:** Before committing a comment or doc that names a file path, check whether that path is gitignored. If it is, drop the specific path and describe the behavior or reason in prose instead, or point at a tracked location that actually ships with the repo.
 
-## Keep secrets and private details out
+# Keep secrets and private details out
 
 Never commit credentials (API keys, tokens, passwords, `.env` files) or other secrets. Never include the user's name, email, or project details in requests to external services unless the user explicitly asks.
 
@@ -40,7 +38,7 @@ Never commit credentials (API keys, tokens, passwords, `.env` files) or other se
 
 **How to apply:** Before staging, check the diff for secrets and for files that likely hold them, and warn the user if they ask to commit one. When a service asks for contact details, such as an email in a User-Agent, use a generic client name or ask.
 
-## Branch off main by default
+# Branch off main by default
 
 When creating a new branch, always base it on `main` (fetch first so it starts from the latest `origin/main`), even if the current checkout is on another feature branch. Only branch off something else when told to.
 
@@ -48,7 +46,7 @@ When creating a new branch, always base it on `main` (fetch first so it starts f
 
 **How to apply:** `git fetch origin && git switch -c <name> origin/main` (or `main` if there's no remote). If the working tree has uncommitted changes that belong on the new branch, carry them over rather than switching base.
 
-## Don't silently restore clean removals when merging
+# Don't silently restore clean removals when merging
 
 When resolving a merge, don't treat every clean (non-conflict-marked) removal from the other branch as an unintended regression to restore. If one side removes something, such as a constructor parameter, a field, or a method, in a hunk the other side never touched, git merges the removal without a conflict marker. That is often a deliberate decision on that branch, not an accident.
 

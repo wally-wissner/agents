@@ -1,6 +1,4 @@
-# Responses
-
-## Separate working from the final output
+# Separate working from the final output
 
 Anything you write before the final output is working: reasoning, narration of tool calls, and intermediate findings. End the working with a horizontal rule (`===`) and put the final output after it. Structure the final output under these headings, in this order:
 

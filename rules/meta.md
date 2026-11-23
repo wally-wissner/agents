@@ -1,6 +1,4 @@
-# Meta
-
-## Don't repeat rules
+# Don't repeat rules
 
 Don't mention in replies that you're following one of these rules. Just follow it silently.
 
