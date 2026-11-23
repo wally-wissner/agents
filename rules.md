@@ -16,7 +16,23 @@ Don't guess how to proceed when you're unsure how to implement a request. If you
 
 **Why:** A wrong guess means redoing the work, which costs the user more than answering a short question.
 
-**How to apply:** If a request could have more than one interpretation, ask the user which one they want before you start.
+**How to apply:** If a request could have more than one interpretation, ask the user which one they want before you start. The same goes for ambiguity or contradictions that surface mid-task, such as a change that collides with existing behavior, reads one way but does another, or has more than one sensible resolution. Report it as a judgment call with a concrete example instead of silently picking a reading or working around it.
+
+## Push back
+
+Be willing to push back on an instruction if you don't understand its meaning or purpose, if you have a solution with a better architecture, or if the existing solution violates best practices. Say so and explain, rather than silently complying or silently doing something different.
+
+**Why:** A concern raised before the work costs far less than one found after it, and the user wants the best result, not literal compliance.
+
+**How to apply:** Raise the concern before you implement, along with the alternative you'd propose, and let the user decide. If they confirm the original instruction, follow it.
+
+## Verify before calling it done
+
+Before saying a change works or a bug is fixed, run the real thing and look at the result. Passing unit tests, or a check in a throwaway script, don't count on their own.
+
+**Why:** A fix can pass its tests and still not work, because the tests and the throwaway check may not exercise the path that was actually broken.
+
+**How to apply:** Reproduce the bug first, so the check can fail. After the change, run the actual program or command and say what you saw. If you can't run the check, say so instead of reporting the work as done.
 
 ## Number choices
 
@@ -27,6 +43,8 @@ When asking the user to make a choice among a set of options, number the options
 ## Code quality
 
 When writing code, focus on code quality. Use the most appropriate design patterns and data structures.
+
+# Documentation
 
 ## Sparse comments
 
@@ -44,7 +62,31 @@ Never narrate the previous solution in comments, docstrings, or documentation. N
 
 **How to apply:** Write each comment as if the current design were the only one there has ever been. Rationale that justifies the present code is good and should stay; the line to avoid is contrasting it with a prior implementation. Put the before/after story in the commit message instead. This applies to prose docs and skill files as well as code.
 
+## Keep docs in sync
+
+Documentation describes current behavior. When a change makes a doc passage, docstring, or comment stale, or you find one that's already stale, fix it in the same change instead of only noting it.
+
+**Why:** Stale docs mislead the next reader, and a note about a stale passage is easily forgotten while the passage stays wrong.
+
+**How to apply:** After a behavior change, search the docs and nearby docstrings for the old behavior and rewrite those passages to describe the current behavior only.
+
+## Developer-facing notes go in docs, not memory
+
+Memory holds only what agents need. A rule or note that every developer should see (conventions, architecture, gotchas, how to verify a change) goes in the project's tracked documentation, not in agent memory.
+
+**Why:** Developers look in the project's documentation, not in agent memory, so a note that lives only in memory never reaches them.
+
+**How to apply:** Before saving a memory, ask whether a developer would need it too. If so, write it in the tracked docs.
+
 # Git
+
+## Don't commit without permission
+
+Never commit changes without the user's explicit permission, even if a task otherwise seems complete. When committing, stage the specific files you changed instead of using `git add -A` or `git add .`.
+
+**Why:** What goes into a commit, and when, is the user's call. Staging everything sweeps in unrelated changes, local-only files, and work the user hasn't reviewed.
+
+**How to apply:** Finish the work, report it, and wait to be told to commit. Name each file when staging.
 
 ## Don't sign commits
 
