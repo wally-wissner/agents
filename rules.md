@@ -42,6 +42,14 @@ Before saying a change works or a bug is fixed, run the real thing and look at t
 
 **How to apply:** Reproduce the bug first, so the check can fail. After the change, run the actual program or command and say what you saw. If you can't run the check, say so instead of reporting the work as done.
 
+## Fix root causes, not symptoms
+
+When a test, check, hook, or build fails, find out why and fix the cause. Don't skip hooks (`--no-verify`), disable or loosen a test, or catch and swallow an error just to get a passing result.
+
+**Why:** A passing result that hides the failure leaves the bug in place and makes every later check less trustworthy.
+
+**How to apply:** Reproduce the failure, identify the cause, and fix it. If you can't, report the work as blocked and say what you found instead of working around it.
+
 ## Number choices
 
 When asking the user to make a choice among a set of options, number the options so that the user can refer to them easily.
