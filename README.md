@@ -15,6 +15,8 @@ My agentic workflow: markdown files that agents read at the start of a session â
 - `version-control.md`: commits, branches, and merges.
 - `security.md`: secrets, untrusted input, access control, cryptography, and untrusted code and content.
 
+`enforcement.md` sits beside them but is reference material, not a rule: it lists the settings and hooks that enforce the rules that can't bend. `index.md` doesn't import it. Settings files have no import mechanism, so apply its settings and script to each machine once, by hand.
+
 ## Using the rules
 
 Agent tools load an instruction file when a session starts, and many follow `@path` imports inside it. `rules/index.md` is a list of such imports, so importing it loads every rule. To apply these rules in every project, import the index from your tool's user-level instruction file:
