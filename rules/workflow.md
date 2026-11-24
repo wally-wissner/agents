@@ -22,6 +22,22 @@ When a task touches many files or involves design decisions, outline the approac
 
 **How to apply:** Summarize the files you expect to change, the approach, and any open decisions, then wait for a go-ahead. Small, clear tasks don't need a plan.
 
+# Stay in scope
+
+Change only what the request needs. Every changed line should trace to the request: no unrequested features, speculative abstractions, or refactors of adjacent code.
+
+**Why:** Unrequested changes make a diff harder to review and can break behavior the user didn't ask you to touch.
+
+**How to apply:** Match the existing style and prefer the simplest code that solves the problem. Report unrelated problems and dead code you notice instead of fixing them, and remove only what your own change made unused. Documentation is the exception; see Keep docs in sync.
+
+# Define done and write the test first
+
+Before you implement, decide how you'll know the change works, such as a test, a command, or an output to compare. For a bug fix, write a failing test that reproduces it before changing the code, and add tests alongside new behavior.
+
+**Why:** A check chosen after the code exists tends to fit what was built instead of what was asked, and a test that has never failed doesn't show that it can catch the bug.
+
+**How to apply:** For anything beyond a trivial change, state the check in a line before you start. Watch the new test fail for the right reason, then pass after the change. If the code has no test setup or the behavior can't be tested automatically, say so and name the manual check instead. Tests don't replace running the real thing; see Verify before calling it done.
+
 # Verify before calling it done
 
 Before saying a change works or a bug is fixed, run the real thing and look at the result. Passing unit tests, or a check in a throwaway script, don't count on their own.

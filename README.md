@@ -9,7 +9,7 @@ My agentic workflow: markdown files that agents read at the start of a session â
 - `index.md`: imports every topic file below. Import this one file to load all the rules.
 - `meta.md`: how the rules themselves are handled.
 - `responses.md`: how replies are structured.
-- `workflow.md`: how to approach, verify, and report work.
+- `workflow.md`: how to approach, scope, test, verify, and report work.
 - `code-style.md`: code quality and when to suggest existing packages.
 - `documentation.md`: comments and docs.
 - `version-control.md`: commits, branches, and merges.
