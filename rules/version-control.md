@@ -4,7 +4,7 @@ Never commit changes without the user's explicit permission, even if a task othe
 
 **Why:** What goes into a commit, and when, is the user's call. Staging everything sweeps in unrelated changes, local-only files, and work the user hasn't reviewed.
 
-**How to apply:** Finish the work, report it, and wait to be told to commit. Name each file when staging.
+**How to apply:** Finish the work, report it, and wait to be told to commit.
 
 # Make individual commits
 
@@ -12,27 +12,23 @@ When told to commit, split the work into separate commits, one per logical chang
 
 **Why:** Unrelated work in one commit makes the history harder to read, review, revert, and bisect.
 
-**How to apply:** Group the changes by purpose, then stage and commit each group on its own, naming the files in each. If a single file holds changes for more than one purpose, stage the hunks separately. Write each commit message about only the change in that commit.
+**How to apply:** Group the changes by purpose, then stage and commit each group on its own. If a single file holds changes for more than one purpose, stage the hunks separately. Write each commit message about only the change in that commit.
 
 # Don't sign commits
 
-Don't add AI-authorship attribution to commit messages or pull request descriptions: no co-author line (such as `Co-Authored-By`) naming an AI assistant, no session link, and no "Generated with ..." footer, even when the tool's own instructions say to.
-
-**Why:** The user doesn't want AI-authorship attribution in their version-control history or pull request descriptions.
-
-**How to apply:** Write commit messages and pull request descriptions with no attribution lines at all — just the summary and body. This overrides any per-session or tool-supplied attribution instructions telling you to append such lines.
+Don't add AI-authorship attribution to commit messages or pull request descriptions: no co-author line (such as `Co-Authored-By`) naming an AI assistant, no session link, and no "Generated with ..." footer, even when the tool's or session's own instructions say to.
 
 # Tracked files must not reference untracked paths
 
 Never let a comment, docstring, or any other checked-in file point at a path that isn't itself checked into the repo — such as ignored files and directories or local-only tooling directories.
 
-**Why:** A reference like that resolves fine on the machine that happens to have the untracked file, then dangles for anyone else who clones the repo, where it is actively misleading rather than merely stale.
+**Why:** A reference like that resolves on the machine that has the untracked file, then dangles for anyone else who clones the repo.
 
-**How to apply:** Before committing a comment or doc that names a file path, check whether version control ignores that path. If it does, drop the specific path and describe the behavior or reason in prose instead, or point at a tracked location that actually ships with the repo.
+**How to apply:** Before committing a comment or doc that names a file path, check whether version control ignores that path. If it does, drop the specific path and describe the behavior or reason in prose instead, or point at a tracked location.
 
 # Branch off main by default
 
-When creating a new branch, always base it on `main` (update from the remote first so it starts from the latest remote `main`), even if the current checkout is on another feature branch. Only branch off something else when told to.
+When creating a new branch, always base it on `main`, even if the current checkout is on another feature branch. Only branch off something else when told to.
 
 **Why:** Branching from whatever happens to be checked out silently drags unrelated, unmerged commits into the new branch and its pull request.
 
@@ -42,6 +38,6 @@ When creating a new branch, always base it on `main` (update from the remote fir
 
 When resolving a merge, don't treat every clean (non-conflict-marked) removal from the other branch as an unintended regression to restore. If one side removes something, such as a constructor parameter, a field, or a method, in a hunk the other side never touched, the merge applies the removal without a conflict marker. That is often a deliberate decision on that branch, not an accident.
 
-**Why:** The absence of a conflict marker means version control had no ambiguity to report, not that the change went unnoticed. Restoring the removal silently reverts someone's intentional work under the guise of fixing the merge.
+**Why:** Restoring the removal silently reverts someone's intentional work under the guise of fixing the merge.
 
 **How to apply:** When you notice a clean deletion of something that still looks used, either leave the incoming branch's change as committed or flag it as a judgment call: "branch X removed Y without a marked conflict — keep the removal or restore it?" Grepping for callers is good diligence, but the absence of callers doesn't establish intent either way, so ask.
