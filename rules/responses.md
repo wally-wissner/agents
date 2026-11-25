@@ -9,7 +9,7 @@ Anything you write before the final output is working: reasoning, narration of t
 Structure the final output under these headings, in this order:
 
 - `### ✅ Result`: what you did or found, what you saw when you verified it, and any notes that need no answer from the user.
-- `### ❓ Decisions needed`: each decision for the user, numbered, with lettered options and your recommendation. Put things you noticed but didn't do, such as out-of-scope issues, and suggested next steps here as decisions (for example, "fix now" or "leave it").
+- `### ❓ Decisions needed`: each decision for the user, numbered, with lettered options and your recommendation. Put things you noticed but didn't do, such as out-of-scope issues, and suggested next steps here as decisions (for example, "fix now" or "leave it"). Leave out questions about committing or pushing, including as suggested next steps.
 
 **Why:** The user needs to find the outcome without reading the working, and to be able to audit the working when they choose to. A fixed layout and a visible boundary make each part findable at a glance.
 
