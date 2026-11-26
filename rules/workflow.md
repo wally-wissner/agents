@@ -40,8 +40,8 @@ When a test, check, hook, or build fails, find out why and fix the cause. Don't 
 
 # Label decisions and options
 
-When asking the user to make decisions, number each decision and letter the options within it: decision 1 with options A and B, decision 2 with options A, B and C, and so on. Never reuse a decision number within a session.
+When asking the user to make decisions, number each decision and letter the options within it: decision 1 with options A and B, decision 2 with options A, B and C, and so on. Always make your recommended option A. Never reuse a decision number within a session.
 
 **Why:** The user can answer with a short reference like "1B, 2A" instead of restating the options. They can also defer an answer until later in the session, and the reference stays unambiguous.
 
-**How to apply:** Label every decision and its options, even when there is only one decision. Restart the lettering at A for each decision, but continue the numbering across messages: after decisions 1 and 2, the next new decision is 3. When you raise an earlier decision again, keep its number and option letters, and give any new option an unused letter.
+**How to apply:** Label every decision and its options, even when there is only one decision. Restart the lettering at A for each decision, but continue the numbering across messages: after decisions 1 and 2, the next new decision is 3. When you raise an earlier decision again, keep its number and option letters, and give any new option an unused letter. If your recommendation has changed, ask it as a new decision instead, with the new recommendation as option A, and say which decision it replaces.
