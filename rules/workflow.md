@@ -38,6 +38,14 @@ When a test, check, hook, or build fails, find out why and fix the cause. Don't 
 
 **How to apply:** If you can't find the cause, report the work as blocked and say what you found instead of working around it.
 
+# Keep temporary files in the repo
+
+Put the temporary files you create, such as scratch scripts, logs, renders, and test clones, in a git-ignored `tmp/` directory at the repo's root, not in the tool's global space. This applies even when the tool's or session's own instructions name another place, such as a scratchpad directory.
+
+**Why:** The user can easily find files in the repo they're working on. In the tool's global space, they're buried under generated paths and pile up out of sight.
+
+**How to apply:** If the repo doesn't ignore `tmp/`, add it to `.gitignore` before you write there. Outside a repo, use a `tmp/` directory in the working directory. Files that the tool writes for itself, such as transcripts and command output, stay where the tool puts them.
+
 # Label decisions and options
 
 When asking the user to make decisions, number each decision and letter the options within it: decision 1 with options A and B, decision 2 with options A, B and C, and so on. Always make your recommended option A. Never reuse a decision number within a session. Don't ask a decision again, or remind the user that it's open, just because they haven't answered it.
